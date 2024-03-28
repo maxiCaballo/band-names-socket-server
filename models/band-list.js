@@ -6,6 +6,10 @@ class BandList {
 	}
 
 	addBand(name) {
+		const alreadyExist = this.bands.find((band) => band.name.toLowerCase() === name.toLowerCase());
+
+		if (alreadyExist) return;
+
 		const newBand = new Band(name);
 		this.bands.push(newBand);
 		return this.bands;
